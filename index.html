@@ -1966,89 +1966,87 @@
 .program-logo-frame{width:100%;height:100%;min-height:250px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#eee}.program-logo-frame img{width:100%;height:100%;object-fit:contain;filter:grayscale(1);mix-blend-mode:multiply}.logo-pd{background:#111}.logo-pd img{mix-blend-mode:normal}.logo-seven img,.logo-superfood img{object-fit:cover;object-position:center top}.project-card:first-child .program-logo-frame{min-height:420px}@media(max-width:620px){.program-logo-frame,.project-card:first-child .program-logo-frame{min-height:280px}}
 
 
-    /* Compact project identity strip: metadata and a small, separate logo */
+
+    /* Remove the colored banner; show each source image whole and undistorted */
     .project-visual,
     .project-card:first-child .project-visual {
       position: relative !important;
-      display: block !important;
+      display: flex !important;
       box-sizing: border-box;
-      height: 124px !important;
-      min-height: 124px !important;
-      padding: 16px 18px !important;
-      overflow: hidden;
-      background: #f0f0ed !important;
+      width: 100%;
+      height: auto !important;
+      min-height: 0 !important;
+      padding: 18px 20px !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 18px;
+      overflow: visible !important;
+      background: transparent !important;
       background-image: none !important;
       color: #171717 !important;
     }
     .project-visual::before,
     .project-visual::after,
-    .project-visual .visual-orbit { display: none !important; content: none !important; }
+    .project-visual .visual-orbit {
+      display: none !important;
+      content: none !important;
+    }
     .project-visual .project-top {
-      position: relative;
-      z-index: 2;
+      position: static !important;
       display: flex;
-      width: 100%;
+      flex: 1 1 auto;
+      min-width: 0;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
     }
     .program-logo-frame {
-      position: absolute;
-      right: 18px;
-      bottom: 12px;
+      position: static !important;
       display: flex;
-      width: 190px;
-      height: 54px;
+      flex: 0 1 auto;
+      width: auto !important;
+      height: auto !important;
       min-height: 0 !important;
-      margin: 0;
+      max-width: 180px;
+      margin: 0 0 0 auto !important;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow: visible !important;
       background: transparent !important;
     }
     .program-logo-frame img {
       display: block;
-      width: auto;
-      max-width: 190px;
-      height: auto;
-      max-height: 54px;
+      width: auto !important;
+      height: auto !important;
+      max-width: 180px !important;
+      max-height: 72px !important;
       object-fit: contain !important;
-      object-position: center center !important;
+      object-position: center !important;
       filter: none !important;
       mix-blend-mode: normal !important;
     }
-    .logo-pd img { max-width: 150px; max-height: 48px; }
-    /* The TVING source is a programme poster, so show only its title strip. */
-    .logo-seven img {
-      width: 190px !important;
-      height: 54px !important;
-      max-width: none !important;
-      max-height: none !important;
-      object-fit: cover !important;
-      object-position: center 8% !important;
-    }
+    .logo-pd img { max-width: 150px !important; max-height: 64px !important; }
+    .logo-seven img,
     .logo-superfood img {
-      max-width: 190px;
-      max-height: 54px;
+      width: auto !important;
+      height: auto !important;
+      max-width: 180px !important;
+      max-height: 72px !important;
       object-fit: contain !important;
-      object-position: center center !important;
+      object-position: center !important;
     }
     @media (max-width: 620px) {
       .project-visual,
       .project-card:first-child .project-visual {
-        height: 116px !important;
-        min-height: 116px !important;
-        padding: 14px !important;
+        padding: 16px 14px !important;
+        gap: 10px;
       }
-      .program-logo-frame {
-        right: 14px;
-        bottom: 10px;
-        width: 160px;
-        height: 46px;
-      }
-      .program-logo-frame img { max-width: 160px; max-height: 46px; }
-      .logo-seven img {
-        width: 160px !important;
-        height: 46px !important;
+      .project-visual .project-top { flex-wrap: wrap; }
+      .program-logo-frame { max-width: 112px; }
+      .program-logo-frame img {
+        max-width: 112px !important;
+        max-height: 52px !important;
       }
     }
 
