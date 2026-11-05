@@ -2136,6 +2136,144 @@
       }
     }
 
+
+    /* ALL THREE PROGRAM VISUALS — consistent editorial identity */
+    .project-visual,
+    .project-card:first-child .project-visual {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      gap: 22px !important;
+      overflow: hidden !important;
+      background: #171b1c !important;
+      color: #f7f5ef !important;
+      padding: 28px 30px !important;
+    }
+    .project-visual .project-top {
+      display: flex !important;
+      flex: 0 0 auto !important;
+      width: 100%;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 12px !important;
+      color: #f7f5ef !important;
+    }
+    .project-visual .project-number,
+    .project-visual .project-type {
+      color: inherit !important;
+    }
+    .program-logo-frame {
+      display: flex !important;
+      flex: 1 1 auto !important;
+      align-items: center !important;
+      justify-content: center !important;
+      width: 100% !important;
+      max-width: none !important;
+      min-height: 0 !important;
+      height: auto !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      background: transparent !important;
+    }
+    .program-logo-frame img {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      max-width: 100% !important;
+      max-height: 210px !important;
+      object-fit: contain !important;
+      object-position: center !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+    }
+    .program-title-block {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-top: 17px;
+      border-top: 1px solid rgba(255,255,255,.28);
+      color: #fff;
+    }
+    .program-title-block .program-channel {
+      color: rgba(255,255,255,.62);
+      font-size: 9px;
+      font-weight: 650;
+      letter-spacing: .14em;
+      line-height: 1.5;
+    }
+    .program-title-block strong {
+      display: block;
+      color: #fff;
+      font-size: clamp(23px, 2.5vw, 34px);
+      font-weight: 750;
+      letter-spacing: -.055em;
+      line-height: 1.2;
+    }
+    /* Featured first project uses a spacious, balanced image column */
+    @media (min-width: 621px) {
+      .project-card:first-child {
+        grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr) !important;
+        gap: 0 !important;
+        align-items: stretch !important;
+      }
+      .project-card:first-child .project-visual {
+        min-height: 500px !important;
+        height: 100% !important;
+        padding: 30px 34px !important;
+        border-right: 1px solid rgba(255,255,255,.12);
+      }
+      .project-card:first-child .program-logo-frame img {
+        max-height: 270px !important;
+      }
+      .project-card:first-child .project-content {
+        min-width: 0;
+        padding: 34px clamp(28px, 3.2vw, 54px) 30px !important;
+      }
+    }
+    /* The other two cards get the same visual hierarchy, not tiny side logos */
+    .project-card:not(:first-child) .project-visual {
+      min-height: 330px !important;
+      height: auto !important;
+      padding: 24px 25px !important;
+      gap: 17px !important;
+    }
+    .project-card:not(:first-child) .program-logo-frame {
+      min-height: 145px !important;
+    }
+    .project-card:not(:first-child) .program-logo-frame img {
+      max-height: 155px !important;
+    }
+    .project-card:not(:first-child) .program-title-block strong {
+      font-size: clamp(21px, 2vw, 28px);
+    }
+    @media (max-width: 900px) and (min-width: 621px) {
+      .project-card:first-child .project-visual { min-height: 420px !important; }
+      .project-card:not(:first-child) .project-visual { min-height: 300px !important; }
+    }
+    @media (max-width: 620px) {
+      .project-card:first-child .project-visual,
+      .project-card:not(:first-child) .project-visual {
+        min-height: 280px !important;
+        height: auto !important;
+        padding: 20px !important;
+        gap: 15px !important;
+      }
+      .program-logo-frame { min-height: 110px !important; }
+      .program-logo-frame img {
+        max-height: 145px !important;
+        max-width: 100% !important;
+      }
+      .program-title-block { padding-top: 13px; }
+      .program-title-block strong { font-size: 24px !important; }
+      .project-card:first-child .project-content,
+      .project-card:not(:first-child) .project-content {
+        padding: 24px 20px !important;
+      }
+    }
+
   </style>
 </head>
 
@@ -2284,7 +2422,8 @@
 
               <div class="visual-orbit" aria-hidden="true"></div>
 
-              <div class="program-logo-frame logo-pd"><img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2017/12/06/imAOmNhHO1pM636481773821329929.jpg" alt="MBC PD수첩 로고" loading="lazy"></div>
+              <div class="program-logo-frame logo-pd"><img src="https://talkimg.imbc.com/TVianUpload/tvian/TViews/image/2017/12/06/imAOmNhHO1pM636481773821329929.jpg" alt="PD수첩 프로그램 이미지" loading="lazy"></div>
+              <div class="program-title-block"><span class="program-channel">MBC · INVESTIGATIVE JOURNALISM</span><strong>PD수첩</strong></div>
             </div>
 
             <div class="project-content">
@@ -2338,7 +2477,8 @@
 
               <div class="visual-orbit" aria-hidden="true"></div>
 
-              <div class="program-logo-frame logo-seven"><img src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231025/0210/P000396462.jpg/dims/resize/1280" alt="TV조선 탐사보도 세븐 로고" loading="lazy"></div>
+              <div class="program-logo-frame logo-seven"><img src="https://image.tving.com/ntgs/contents/CTC/caip/CAIP1500/ko/20231025/0210/P000396462.jpg/dims/resize/1280" alt="탐사보도 세븐 프로그램 홍보 이미지" loading="lazy"></div>
+              <div class="program-title-block"><span class="program-channel">TV CHOSUN · CURRENT AFFAIRS</span><strong>탐사보도 세븐</strong></div>
             </div>
 
             <div class="project-content">
@@ -2393,7 +2533,8 @@
 
               <div class="visual-orbit" aria-hidden="true"></div>
 
-              <div class="program-logo-frame logo-superfood"><img src="https://poc-cf-image.cjenm.com/public/share/menumng/%EC%8A%88%ED%8D%BC%ED%91%B8%EB%93%9C%EC%9D%98-%ED%9E%983_banner_960.jpg" alt="tvN STORY 슈퍼푸드의 힘 로고" loading="lazy"></div>
+              <div class="program-logo-frame logo-superfood"><img src="https://poc-cf-image.cjenm.com/public/share/menumng/%EC%8A%88%ED%8D%BC%ED%91%B8%EB%93%9C%EC%9D%98-%ED%9E%983_banner_960.jpg" alt="슈퍼푸드의 힘 프로그램 배너" loading="lazy"></div>
+              <div class="program-title-block"><span class="program-channel">tvN STORY · HEALTH &amp; SCIENCE</span><strong>슈퍼푸드의 힘</strong></div>
             </div>
 
             <div class="project-content">
