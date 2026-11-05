@@ -2050,6 +2050,92 @@
       }
     }
 
+
+    /* PROJECT 01 — 넓은 비주얼 영역과 로고 중심의 에디토리얼 레이아웃 */
+    @media (min-width: 621px) {
+      .project-card:first-child {
+        grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr) !important;
+        gap: 0 !important;
+        align-items: stretch !important;
+      }
+      .project-card:first-child .project-visual {
+        min-height: 500px !important;
+        height: 100% !important;
+        padding: 30px 34px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 26px !important;
+        overflow: hidden !important;
+        background: #171b1c !important;
+        color: #f7f5ef !important;
+        border-right: 1px solid rgba(255,255,255,.12);
+      }
+      .project-card:first-child .project-top {
+        width: 100%;
+        flex: 0 0 auto;
+      }
+      .project-card:first-child .program-logo-frame {
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        height: auto !important;
+        flex: 1 1 auto !important;
+        margin: 0 !important;
+        align-self: stretch;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        overflow: hidden !important;
+        background: transparent !important;
+      }
+      .project-card:first-child .program-logo-frame img {
+        display: block;
+        width: 100% !important;
+        height: auto !important;
+        max-width: 560px !important;
+        max-height: 350px !important;
+        object-fit: contain !important;
+        object-position: center !important;
+      }
+      .project-card:first-child .project-content {
+        min-width: 0;
+        padding: 34px clamp(28px, 3.2vw, 54px) 30px !important;
+      }
+    }
+    @media (max-width: 620px) {
+      .project-card:first-child {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0 !important;
+      }
+      .project-card:first-child .project-visual {
+        min-height: 260px !important;
+        padding: 20px !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        gap: 18px !important;
+        background: #171b1c !important;
+        color: #f7f5ef !important;
+      }
+      .project-card:first-child .program-logo-frame {
+        width: 100% !important;
+        max-width: none !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        flex: 1 1 auto !important;
+      }
+      .project-card:first-child .program-logo-frame img {
+        width: 100% !important;
+        max-width: 420px !important;
+        max-height: 190px !important;
+      }
+      .project-card:first-child .project-content {
+        padding: 24px 20px !important;
+      }
+    }
+
   </style>
 </head>
 
