@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f6f5f0">
+  <meta name="theme-color" content="#f5f0e9">
   <meta name="description" content="이혜인 작가의 포트폴리오. 사실을 검증하고, 사람의 이야기를 발견하며, 완성도 높은 방송 콘텐츠를 기획합니다.">
   <title>이혜인 | Writer & Researcher</title>
 
@@ -1207,6 +1207,349 @@
         animation-duration: 0.01ms !important;
       }
     }
+  
+    /* ========================================
+       10. CLASSIC EDITORIAL · BURGUNDY & CREAM
+    ======================================== */
+    :root {
+      --bg: #f5f0e9;
+      --paper: #fbf8f3;
+      --ink: #292525;
+      --muted: #817772;
+      --line: #ded3ca;
+      --accent: #542d36;
+      --accent-dark: #3e2028;
+      --soft: #ebe2d9;
+      --font: -apple-system, BlinkMacSystemFont, "Pretendard",
+              "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      --serif: "Iowan Old Style", "Baskerville", "Times New Roman",
+               "Batang", "Noto Serif KR", serif;
+    }
+
+    ::selection {
+      color: #fffaf5;
+      background: #542d36;
+    }
+
+    .site-header {
+      border-bottom-color: rgba(84, 45, 54, 0.16);
+      background: rgba(245, 240, 233, 0.94);
+    }
+
+    .logo-mark {
+      border-radius: 2px;
+      background: var(--accent);
+      color: #fffaf5;
+    }
+
+    .eyebrow {
+      letter-spacing: 0.19em;
+    }
+
+    .eyebrow::before {
+      width: 25px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .accent-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 0;
+      background: var(--accent);
+    }
+
+    .hero {
+      padding-top: 118px;
+      padding-bottom: 98px;
+    }
+
+    .hero::before,
+    .hero::after {
+      border-color: rgba(84, 45, 54, 0.11);
+    }
+
+    .hero-topline {
+      color: var(--accent);
+      font-weight: 650;
+      letter-spacing: 0.18em;
+    }
+
+    .status-dot {
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(84, 45, 54, 0.11);
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 600;
+      letter-spacing: -0.075em;
+      line-height: 1.22;
+    }
+
+    .hero h1 .highlight::after {
+      bottom: 7px;
+      height: 13%;
+      background: rgba(84, 45, 54, 0.16);
+      transform: none;
+    }
+
+    .hero-description {
+      color: #716761;
+    }
+
+    .hero-description strong {
+      color: var(--accent);
+    }
+
+    .hero-index {
+      border-top-color: #cfc1b7;
+      letter-spacing: 0.13em;
+    }
+
+    .button {
+      border-radius: 2px;
+    }
+
+    .button-primary {
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    .button-primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .button-secondary {
+      border-color: #b9a9a0;
+    }
+
+    .button-secondary:hover {
+      background: var(--paper);
+    }
+
+    .numbers {
+      border-color: #d8cbc1;
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .number-value {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-weight: 600;
+    }
+
+    .work-section {
+      padding-top: 126px;
+      padding-bottom: 130px;
+    }
+
+    .section-heading h2,
+    .project-content h3,
+    .about-main h2,
+    .contact-panel h2 {
+      font-family: var(--serif);
+      font-weight: 600;
+      letter-spacing: -0.055em;
+    }
+
+    .project-card {
+      border-color: #d9cec5;
+      border-radius: 2px;
+      background: var(--paper);
+      box-shadow: none;
+    }
+
+    .project-card:hover {
+      box-shadow: 0 16px 38px rgba(65, 42, 39, 0.08);
+    }
+
+    .project-visual {
+      min-height: 245px;
+      padding: 25px;
+      background: #542d36;
+      color: #fff8f1;
+    }
+
+    .project-visual.visual-two {
+      background: #e8ddd3;
+      color: #382b2b;
+    }
+
+    .project-visual.visual-three {
+      background: #c9b5a8;
+      color: #382b2b;
+    }
+
+    .project-type {
+      border-radius: 2px;
+      letter-spacing: 0.1em;
+    }
+
+    .visual-title {
+      font-family: var(--serif);
+      font-weight: 600;
+      letter-spacing: -0.045em;
+    }
+
+    .visual-title span {
+      font-family: var(--font);
+      letter-spacing: 0.14em;
+    }
+
+    .visual-orbit,
+    .visual-orbit::before,
+    .visual-orbit::after,
+    .visual-two .visual-orbit,
+    .visual-two .visual-orbit::before,
+    .visual-two .visual-orbit::after,
+    .visual-three .visual-orbit {
+      border-color: rgba(84, 45, 54, 0.19);
+    }
+
+    .project-content {
+      padding: 28px 25px 26px;
+    }
+
+    .project-content h3 {
+      color: #382b2b;
+    }
+
+    .project-description {
+      color: #746a64;
+    }
+
+    .stat {
+      background: #f1eae3;
+    }
+
+    .stat strong {
+      color: var(--accent);
+      font-family: var(--serif);
+      font-weight: 600;
+    }
+
+    .project-stats {
+      border-top-color: #e3d8cf;
+    }
+
+    .project-footer .project-role {
+      color: var(--accent);
+    }
+
+    .about-section {
+      padding: 116px 0;
+      background: #eee5dc;
+      color: var(--ink);
+    }
+
+    .about-section .eyebrow,
+    .about-block .block-label {
+      color: #806d68;
+    }
+
+    .about-section .eyebrow::before {
+      background: var(--accent);
+    }
+
+    .about-main h2 .highlight,
+    .about-highlight,
+    .approach-item .approach-number {
+      color: var(--accent);
+    }
+
+    .about-main > p,
+    .about-block p {
+      color: #70645f;
+    }
+
+    .about-block {
+      border-top-color: #d4c5bb;
+    }
+
+    .about-block:last-child {
+      border-bottom-color: #d4c5bb;
+    }
+
+    .skill-tag {
+      border-color: #cbbab0;
+      border-radius: 2px;
+      color: #5b4b47;
+    }
+
+    .approach-item {
+      border-color: #d4c5bb;
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    .approach-item p {
+      color: #766a64;
+    }
+
+    .contact-panel {
+      border: 1px solid #d8c9bf;
+      border-radius: 2px;
+      background: #eee5dc;
+    }
+
+    .contact-panel::before,
+    .contact-panel::after {
+      border-color: rgba(84, 45, 54, 0.17);
+    }
+
+    .contact-panel .eyebrow {
+      color: var(--accent);
+    }
+
+    .contact-panel h2 {
+      color: var(--accent);
+    }
+
+    .contact-panel > p {
+      color: #6e5e59;
+    }
+
+    .contact-note {
+      border-color: rgba(84, 45, 54, 0.3);
+      border-radius: 2px;
+      background: rgba(255, 255, 255, 0.3);
+      color: var(--accent);
+    }
+
+    .site-footer {
+      border-top-color: #d8cbc1;
+    }
+
+    .footer-name {
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        padding-top: 88px;
+        padding-bottom: 78px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: clamp(39px, 11vw, 62px);
+      }
+
+      .project-visual {
+        min-height: 215px;
+      }
+
+      .about-section {
+        padding: 82px 0;
+      }
+
+      .contact-panel {
+        padding: 42px 28px;
+      }
+    }
+
   </style>
 </head>
 
