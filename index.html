@@ -1963,476 +1963,179 @@
     }
 
   
-.program-logo-frame{width:100%;height:100%;min-height:250px;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#eee}.program-logo-frame img{width:100%;height:100%;object-fit:contain;filter:grayscale(1);mix-blend-mode:multiply}.logo-pd{background:#111}.logo-pd img{mix-blend-mode:normal}.logo-seven img,.logo-superfood img{object-fit:cover;object-position:center top}.project-card:first-child .program-logo-frame{min-height:420px}@media(max-width:620px){.program-logo-frame,.project-card:first-child .program-logo-frame{min-height:280px}}
 
-
-
-    /* Remove the colored banner; show each source image whole and undistorted */
-    .project-visual,
-    .project-card:first-child .project-visual {
+    /* PROJECTS — 이미지 원본 비율 그대로, 실제 가용 너비를 모두 활용 */
+    .project-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 36px !important;
+    }
+    .project-card,
+    .project-card:first-child,
+    .project-card:not(:first-child) {
+      display: grid !important;
+      grid-template-columns: minmax(0, .93fr) minmax(0, 1.07fr) !important;
+      grid-column: auto !important;
+      gap: 0 !important;
+      align-items: stretch !important;
+      width: 100% !important;
+      min-width: 0 !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+      border: 1px solid #dedede !important;
+      border-radius: 0 !important;
+      background: #fff !important;
+      box-shadow: none !important;
+    }
+    .project-card:hover { transform: none !important; box-shadow: none !important; }
+    .project-card .project-visual,
+    .project-card:first-child .project-visual,
+    .project-card:not(:first-child) .project-visual {
       position: relative !important;
       display: flex !important;
-      box-sizing: border-box;
-      width: 100%;
-      height: auto !important;
-      min-height: 0 !important;
-      padding: 18px 20px !important;
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 18px;
-      overflow: visible !important;
-      background: transparent !important;
-      background-image: none !important;
-      color: #171717 !important;
-    }
-    .project-visual::before,
-    .project-visual::after,
-    .project-visual .visual-orbit {
-      display: none !important;
-      content: none !important;
-    }
-    .project-visual .project-top {
-      position: static !important;
-      display: flex;
-      flex: 1 1 auto;
-      min-width: 0;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .program-logo-frame {
-      position: static !important;
-      display: flex;
-      flex: 0 1 auto;
-      width: auto !important;
-      height: auto !important;
-      min-height: 0 !important;
-      max-width: 180px;
-      margin: 0 0 0 auto !important;
-      align-items: center;
-      justify-content: center;
-      overflow: visible !important;
-      background: transparent !important;
-    }
-    .program-logo-frame img {
-      display: block;
-      width: auto !important;
-      height: auto !important;
-      max-width: 180px !important;
-      max-height: 72px !important;
-      object-fit: contain !important;
-      object-position: center !important;
-      filter: none !important;
-      mix-blend-mode: normal !important;
-    }
-    .logo-pd img { max-width: 150px !important; max-height: 64px !important; }
-    .logo-seven img,
-    .logo-superfood img {
-      width: auto !important;
-      height: auto !important;
-      max-width: 180px !important;
-      max-height: 72px !important;
-      object-fit: contain !important;
-      object-position: center !important;
-    }
-    @media (max-width: 620px) {
-      .project-visual,
-      .project-card:first-child .project-visual {
-        padding: 16px 14px !important;
-        gap: 10px;
-      }
-      .project-visual .project-top { flex-wrap: wrap; }
-      .program-logo-frame { max-width: 112px; }
-      .program-logo-frame img {
-        max-width: 112px !important;
-        max-height: 52px !important;
-      }
-    }
-
-
-    /* PROJECT 01 — 넓은 비주얼 영역과 로고 중심의 에디토리얼 레이아웃 */
-    @media (min-width: 621px) {
-      .project-card:first-child {
-        grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr) !important;
-        gap: 0 !important;
-        align-items: stretch !important;
-      }
-      .project-card:first-child .project-visual {
-        min-height: 500px !important;
-        height: 100% !important;
-        padding: 30px 34px !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        justify-content: flex-start !important;
-        gap: 26px !important;
-        overflow: hidden !important;
-        background: #171b1c !important;
-        color: #f7f5ef !important;
-        border-right: 1px solid rgba(255,255,255,.12);
-      }
-      .project-card:first-child .project-top {
-        width: 100%;
-        flex: 0 0 auto;
-      }
-      .project-card:first-child .program-logo-frame {
-        width: 100% !important;
-        max-width: none !important;
-        min-height: 0 !important;
-        height: auto !important;
-        flex: 1 1 auto !important;
-        margin: 0 !important;
-        align-self: stretch;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        overflow: hidden !important;
-        background: transparent !important;
-      }
-      .project-card:first-child .program-logo-frame img {
-        display: block;
-        width: 100% !important;
-        height: auto !important;
-        max-width: 560px !important;
-        max-height: 350px !important;
-        object-fit: contain !important;
-        object-position: center !important;
-      }
-      .project-card:first-child .project-content {
-        min-width: 0;
-        padding: 34px clamp(28px, 3.2vw, 54px) 30px !important;
-      }
-    }
-    @media (max-width: 620px) {
-      .project-card:first-child {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0 !important;
-      }
-      .project-card:first-child .project-visual {
-        min-height: 260px !important;
-        padding: 20px !important;
-        flex-direction: column !important;
-        align-items: stretch !important;
-        justify-content: flex-start !important;
-        gap: 18px !important;
-        background: #171b1c !important;
-        color: #f7f5ef !important;
-      }
-      .project-card:first-child .program-logo-frame {
-        width: 100% !important;
-        max-width: none !important;
-        min-height: 0 !important;
-        margin: 0 !important;
-        flex: 1 1 auto !important;
-      }
-      .project-card:first-child .program-logo-frame img {
-        width: 100% !important;
-        max-width: 420px !important;
-        max-height: 190px !important;
-      }
-      .project-card:first-child .project-content {
-        padding: 24px 20px !important;
-      }
-    }
-
-
-    /* ALL THREE PROGRAM VISUALS — consistent editorial identity */
-    .project-visual,
-    .project-card:first-child .project-visual {
-      display: flex !important;
+      box-sizing: border-box !important;
       flex-direction: column !important;
       align-items: stretch !important;
       justify-content: flex-start !important;
-      gap: 22px !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 0 !important;
+      padding: 24px 26px !important;
+      gap: 16px !important;
       overflow: hidden !important;
       background: #171b1c !important;
+      background-image: none !important;
       color: #f7f5ef !important;
-      padding: 28px 30px !important;
+      border-right: 1px solid rgba(255,255,255,.1) !important;
     }
-    .project-visual .project-top {
+    .project-visual::before,
+    .project-visual::after,
+    .project-visual .visual-orbit { display: none !important; content: none !important; }
+    .project-card .project-top {
       display: flex !important;
       flex: 0 0 auto !important;
-      width: 100%;
+      width: 100% !important;
       align-items: center !important;
       justify-content: space-between !important;
       gap: 12px !important;
-      color: #f7f5ef !important;
     }
-    .project-visual .project-number,
-    .project-visual .project-type {
-      color: inherit !important;
-    }
-    .program-logo-frame {
+    .project-card .project-number,
+    .project-card .project-type { color: #f7f5ef !important; }
+
+    /* 이미지 크기는 부모의 폭에 맞추고, 높이는 실제 사진 비율로 계산 */
+    .project-card .program-logo-frame,
+    .project-card:first-child .program-logo-frame,
+    .project-card:not(:first-child) .program-logo-frame {
       display: flex !important;
-      flex: 1 1 auto !important;
+      flex: 0 0 auto !important;
       align-items: center !important;
       justify-content: center !important;
       width: 100% !important;
       max-width: none !important;
-      min-height: 0 !important;
       height: auto !important;
-      margin: 0 !important;
+      min-height: 0 !important;
+      margin: auto 0 !important;
       padding: 0 !important;
-      overflow: hidden !important;
+      overflow: visible !important;
       background: transparent !important;
     }
-    .program-logo-frame img {
+    .project-card .program-logo-frame img,
+    .project-card:first-child .program-logo-frame img,
+    .project-card:not(:first-child) .program-logo-frame img {
       display: block !important;
       width: 100% !important;
       height: auto !important;
       max-width: 100% !important;
-      max-height: 210px !important;
+      max-height: none !important;
+      min-height: 0 !important;
       object-fit: contain !important;
       object-position: center !important;
       filter: none !important;
       mix-blend-mode: normal !important;
     }
-    .program-title-block {
-      flex: 0 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding-top: 17px;
-      border-top: 1px solid rgba(255,255,255,.28);
-      color: #fff;
+    .project-card .program-title-block {
+      display: flex !important;
+      flex: 0 0 auto !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+      margin: 0 !important;
+      padding-top: 14px !important;
+      border-top: 1px solid rgba(255,255,255,.25) !important;
+      color: #fff !important;
     }
-    .program-title-block .program-channel {
-      color: rgba(255,255,255,.62);
-      font-size: 9px;
-      font-weight: 650;
-      letter-spacing: .14em;
-      line-height: 1.5;
+    .project-card .program-title-block .program-channel {
+      color: rgba(255,255,255,.65) !important;
+      font-size: 9px !important;
+      font-weight: 650 !important;
+      letter-spacing: .13em !important;
+      line-height: 1.45 !important;
     }
-    .program-title-block strong {
-      display: block;
-      color: #fff;
-      font-size: clamp(23px, 2.5vw, 34px);
-      font-weight: 750;
-      letter-spacing: -.055em;
-      line-height: 1.2;
+    .project-card .program-title-block strong {
+      display: block !important;
+      color: #fff !important;
+      font-size: clamp(24px, 2.45vw, 34px) !important;
+      font-weight: 770 !important;
+      letter-spacing: -.06em !important;
+      line-height: 1.15 !important;
     }
-    /* Featured first project uses a spacious, balanced image column */
-    @media (min-width: 621px) {
-      .project-card:first-child {
-        grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr) !important;
-        gap: 0 !important;
-        align-items: stretch !important;
-      }
-      .project-card:first-child .project-visual {
-        min-height: 500px !important;
-        height: 100% !important;
-        padding: 30px 34px !important;
-        border-right: 1px solid rgba(255,255,255,.12);
-      }
-      .project-card:first-child .program-logo-frame img {
-        max-height: 270px !important;
-      }
-      .project-card:first-child .project-content {
-        min-width: 0;
-        padding: 34px clamp(28px, 3.2vw, 54px) 30px !important;
-      }
+    .project-card .project-content,
+    .project-card:first-child .project-content,
+    .project-card:not(:first-child) .project-content {
+      display: flex !important;
+      min-width: 0 !important;
+      flex-direction: column !important;
+      padding: 28px clamp(25px, 3vw, 46px) 26px !important;
     }
-    /* The other two cards get the same visual hierarchy, not tiny side logos */
-    .project-card:not(:first-child) .project-visual {
-      min-height: 330px !important;
-      height: auto !important;
-      padding: 24px 25px !important;
-      gap: 17px !important;
+    .project-card .project-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
-    .project-card:not(:first-child) .program-logo-frame {
-      min-height: 145px !important;
-    }
-    .project-card:not(:first-child) .program-logo-frame img {
-      max-height: 155px !important;
-    }
-    .project-card:not(:first-child) .program-title-block strong {
-      font-size: clamp(21px, 2vw, 28px);
-    }
+
+    /* 좁은 데스크톱: 너무 좁게 갈라지는 것을 방지 */
     @media (max-width: 900px) and (min-width: 621px) {
-      .project-card:first-child .project-visual { min-height: 420px !important; }
-      .project-card:not(:first-child) .project-visual { min-height: 300px !important; }
-    }
-    @media (max-width: 620px) {
-      .project-card:first-child .project-visual,
-      .project-card:not(:first-child) .project-visual {
-        min-height: 280px !important;
-        height: auto !important;
-        padding: 20px !important;
-        gap: 15px !important;
-      }
-      .program-logo-frame { min-height: 110px !important; }
-      .program-logo-frame img {
-        max-height: 145px !important;
-        max-width: 100% !important;
-      }
-      .program-title-block { padding-top: 13px; }
-      .program-title-block strong { font-size: 24px !important; }
-      .project-card:first-child .project-content,
-      .project-card:not(:first-child) .project-content {
-        padding: 24px 20px !important;
-      }
-    }
-
-
-    /* ALL PROJECTS: repeat the exact horizontal editorial structure of PROJECT 01 */
-    @media (min-width: 621px) {
-      .project-grid {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 34px !important;
-      }
       .project-card,
       .project-card:first-child,
       .project-card:not(:first-child) {
-        display: grid !important;
-        grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr) !important;
-        grid-column: auto !important;
-        align-items: stretch !important;
-        gap: 0 !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        margin: 0 !important;
-        border: 1px solid #d8d8d8 !important;
-        background: #fff !important;
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr) !important;
       }
       .project-card .project-visual,
       .project-card:first-child .project-visual,
       .project-card:not(:first-child) .project-visual {
+        padding: 19px 18px !important;
+        gap: 13px !important;
+      }
+      .project-card .project-content { padding: 22px 20px !important; }
+    }
+
+    /* 모바일: 원본 비율을 유지하며 사진 바로 아래 제목 배치 */
+    @media (max-width: 620px) {
+      .project-grid { gap: 28px !important; }
+      .project-card,
+      .project-card:first-child,
+      .project-card:not(:first-child) {
         display: flex !important;
         flex-direction: column !important;
-        align-items: stretch !important;
-        justify-content: flex-start !important;
-        box-sizing: border-box !important;
         width: 100% !important;
-        height: 100% !important;
-        min-height: 480px !important;
-        padding: 28px 30px !important;
-        gap: 18px !important;
-        overflow: hidden !important;
-        border: 0 !important;
-        border-right: 1px solid rgba(255,255,255,.14) !important;
-        background: #171b1c !important;
-        color: #f7f5ef !important;
+        margin: 0 !important;
       }
-      .project-card .project-top {
-        display: flex !important;
-        flex: 0 0 auto !important;
-        width: 100% !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 12px !important;
-      }
-      .project-card .project-number,
-      .project-card .project-type {
-        color: #f7f5ef !important;
-      }
-      .project-card .program-logo-frame {
-        display: flex !important;
-        flex: 1 1 0 !important;
-        align-items: center !important;
-        justify-content: center !important;
-        width: 100% !important;
+      .project-card .project-visual,
+      .project-card:first-child .project-visual,
+      .project-card:not(:first-child) .project-visual {
         height: auto !important;
         min-height: 0 !important;
-        max-width: none !important;
+        padding: 16px !important;
+        gap: 14px !important;
+        border-right: 0 !important;
+      }
+      .project-card .program-logo-frame,
+      .project-card:first-child .program-logo-frame,
+      .project-card:not(:first-child) .program-logo-frame {
         margin: 0 !important;
-        padding: 0 !important;
-        overflow: hidden !important;
-        background: transparent !important;
       }
-      .project-card .program-logo-frame img {
-        display: block !important;
-        width: 100% !important;
-        height: auto !important;
-        max-width: 100% !important;
-        max-height: 320px !important;
-        object-fit: contain !important;
-        object-position: center !important;
-        filter: none !important;
-        mix-blend-mode: normal !important;
-      }
-      .project-card .program-title-block {
-        flex: 0 0 auto !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 7px !important;
-        margin-top: auto !important;
-        padding-top: 15px !important;
-        border-top: 1px solid rgba(255,255,255,.28) !important;
-        color: #fff !important;
-      }
-      .project-card .program-title-block .program-channel {
-        color: rgba(255,255,255,.66) !important;
-        font-size: 9px !important;
-        letter-spacing: .13em !important;
-      }
-      .project-card .program-title-block strong {
-        color: #fff !important;
-        font-size: clamp(25px, 2.6vw, 36px) !important;
-        font-weight: 750 !important;
-        letter-spacing: -.055em !important;
-        line-height: 1.2 !important;
-      }
-      .project-card .project-content {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        min-width: 0 !important;
-        padding: 32px clamp(28px, 3.2vw, 52px) 28px !important;
-      }
-    }
-    @media (max-width: 900px) and (min-width: 621px) {
-      .project-grid { gap: 26px !important; }
-      .project-card,
-      .project-card:first-child,
-      .project-card:not(:first-child) {
-        grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr) !important;
-      }
-      .project-card .project-visual,
-      .project-card:first-child .project-visual,
-      .project-card:not(:first-child) .project-visual {
-        min-height: 440px !important;
-        padding: 22px !important;
-      }
-      .project-card .project-content { padding: 25px 22px !important; }
-    }
-    @media (max-width: 620px) {
-      .project-grid { display: flex !important; flex-direction: column !important; gap: 28px !important; }
-      .project-card,
-      .project-card:first-child,
-      .project-card:not(:first-child) {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        margin: 0 !important;
-        gap: 0 !important;
-      }
-      .project-card .project-visual,
-      .project-card:first-child .project-visual,
-      .project-card:not(:first-child) .project-visual {
-        display: flex !important;
-        flex-direction: column !important;
-        min-height: 300px !important;
-        height: auto !important;
-        padding: 20px !important;
-        gap: 15px !important;
-        background: #171b1c !important;
-        color: #f7f5ef !important;
-      }
-      .project-card .program-logo-frame {
-        min-height: 110px !important;
-      }
-      .project-card .program-logo-frame img {
-        width: 100% !important;
-        max-width: 100% !important;
-        max-height: 175px !important;
-      }
-      .project-card .program-title-block { margin-top: 0 !important; }
       .project-card .program-title-block strong { font-size: 25px !important; }
-      .project-card .project-content {
-        display: block !important;
-        padding: 24px 20px !important;
+      .project-card .project-content,
+      .project-card:first-child .project-content,
+      .project-card:not(:first-child) .project-content {
+        padding: 22px 18px !important;
       }
     }
 
