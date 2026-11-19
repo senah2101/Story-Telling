@@ -2139,6 +2139,100 @@
       }
     }
 
+
+    /* ABOUT: 사진 + 작가 소개, 그 아래 이력 3단 구성 */
+    .about-layout {
+      display: grid !important;
+      grid-template-columns: minmax(230px, 320px) minmax(0, 1fr) !important;
+      column-gap: clamp(36px, 5vw, 80px) !important;
+      row-gap: 52px !important;
+      align-items: start !important;
+    }
+    .about-portrait {
+      grid-column: 1;
+      grid-row: 1;
+      width: 100%;
+      max-width: 320px;
+      margin: 0;
+    }
+    .about-portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: center;
+      border: 0;
+      border-radius: 0;
+      filter: grayscale(100%);
+    }
+    .about-portrait figcaption {
+      margin-top: 11px;
+      color: #777;
+      font-size: 9px;
+      font-weight: 650;
+      letter-spacing: .14em;
+    }
+    .about-main {
+      grid-column: 2;
+      grid-row: 1;
+      min-width: 0;
+    }
+    .about-main h2 {
+      font-size: clamp(40px, 5.3vw, 70px);
+    }
+    .about-main > p { max-width: 750px; }
+    .about-side {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      display: grid !important;
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+      align-items: start;
+      gap: 30px !important;
+      min-width: 0;
+      padding-top: 0;
+    }
+    .about-side .about-block { min-width: 0; }
+    .about-side .about-block:last-child {
+      border-bottom: 0;
+    }
+    .about-section .approach-grid {
+      margin-top: 55px;
+    }
+    @media (max-width: 900px) and (min-width: 701px) {
+      .about-layout {
+        grid-template-columns: minmax(190px, 270px) minmax(0, 1fr) !important;
+        column-gap: 32px !important;
+        row-gap: 40px !important;
+      }
+      .about-main h2 { font-size: clamp(34px, 4.8vw, 50px); }
+      .about-side { gap: 20px !important; }
+    }
+    @media (max-width: 700px) {
+      .about-layout {
+        grid-template-columns: minmax(0, 1fr) !important;
+        row-gap: 28px !important;
+      }
+      .about-main {
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .about-main h2 { font-size: clamp(38px, 8.7vw, 56px); }
+      .about-portrait {
+        grid-column: 1;
+        grid-row: 2;
+        max-width: 310px;
+      }
+      .about-side {
+        grid-column: 1;
+        grid-row: 3;
+        display: block !important;
+        padding-top: 15px;
+      }
+      .about-side .about-block:last-child { border-bottom: 1px solid #c9c9c9; }
+      .about-section .approach-grid { margin-top: 40px; }
+    }
+
   </style>
 </head>
 
@@ -2455,6 +2549,13 @@
       <div class="container">
 
         <div class="about-layout">
+
+          <figure class="about-portrait">
+            <img src="assets/about-portrait-bw.jpg"
+                 alt="해변에서 카메라를 들고 있는 이혜인 작가의 흑백 사진"
+                 width="420" height="560" loading="lazy" decoding="async">
+            <figcaption>PORTRAIT / LEE HYEIN</figcaption>
+          </figure>
 
           <div class="about-main">
             <p class="eyebrow">About Me</p>
