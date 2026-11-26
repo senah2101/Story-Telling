@@ -2412,6 +2412,77 @@
       .button:hover .button-arrow, .nav-contact:hover > span { transform: none !important; }
     }
 
+
+    /* Compact CONTACT — preserve the established font sizes */
+    .contact-section {
+      padding: clamp(32px, 4vw, 56px) 0;
+    }
+    .contact-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr);
+      column-gap: clamp(24px, 3vw, 44px);
+      row-gap: 14px;
+      align-items: start;
+      padding: clamp(28px, 3.6vw, 48px);
+      color: #fff;
+    }
+    .contact-panel > .eyebrow {
+      grid-column: 1 / -1;
+      margin: 0;
+      max-width: none;
+    }
+    .contact-panel h2 {
+      grid-column: 1;
+      grid-row: 2 / 4;
+      align-self: center;
+      color: #fff;
+      max-width: none;
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+    .contact-panel > p:not(.eyebrow) {
+      grid-column: 2;
+      grid-row: 2;
+      max-width: none;
+      margin: 0;
+      align-self: end;
+    }
+    .contact-panel .contact-note {
+      grid-column: 2;
+      grid-row: 3;
+      justify-self: start;
+      max-width: 100%;
+      margin: 0;
+      border-color: #777;
+      color: #fff;
+      transition: background .25s ease, color .25s ease, border-color .25s ease;
+    }
+    .contact-panel .contact-note:hover,
+    .contact-panel .contact-note:focus-visible {
+      background: #fff;
+      color: #111;
+      border-color: #fff;
+    }
+    .contact-note .contact-email {
+      font-size: inherit;
+      overflow-wrap: anywhere;
+    }
+    @media (max-width: 1050px) {
+      .contact-panel {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 16px;
+        padding: clamp(22px, 4vw, 38px);
+      }
+      .contact-panel > .eyebrow,
+      .contact-panel h2,
+      .contact-panel > p:not(.eyebrow),
+      .contact-panel .contact-note {
+        grid-column: 1;
+        grid-row: auto;
+      }
+      .contact-panel > p:not(.eyebrow) { max-width: 800px; }
+    }
+
   </style>
 </head>
 
@@ -2862,10 +2933,10 @@
             의미 있는 프로젝트를 함께 만들어 갈 기회를 기다립니다.
           </p>
 
-          <div class="contact-note">
-            <span aria-hidden="true">✳</span>
-            공개 연락처는 표시하지 않았습니다.
-          </div>
+          <a class="contact-note" href="mailto:senah21@naver.com" aria-label="이메일 보내기: senah21@naver.com">
+            <span aria-hidden="true">↗</span>
+            <span class="contact-email">senah21@naver.com</span>
+          </a>
         </div>
 
       </div>
