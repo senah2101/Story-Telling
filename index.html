@@ -2294,6 +2294,124 @@
     .about-main h2 { font-size: clamp(28px, 4.7vw, 64px) !important; }
     .about-title-line { display: block; white-space: nowrap; }
 
+
+    /* MOTION EDITORIAL — subtle motion, unchanged content and image proportions */
+    :root {
+      --motion-ease: cubic-bezier(.22, 1, .36, 1);
+    }
+    .hero-title-line { display: block; }
+    .hero h1 .highlight { transition: color .45s var(--motion-ease); }
+    .hero h1 .highlight:hover { color: var(--ink); }
+    .hero-index { position: relative; }
+    .reading-progress {
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 2px;
+      width: 100%;
+      background: #111;
+      pointer-events: none;
+      transform: scaleX(0);
+      transform-origin: left center;
+      z-index: 2;
+    }
+    .nav-links a {
+      position: relative;
+      display: inline-block;
+      transition: color .25s ease;
+    }
+    .nav-links a::after {
+      position: absolute;
+      left: 0; right: 0; bottom: -6px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .35s var(--motion-ease);
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="location"] { color: #111; }
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after,
+    .nav-links a[aria-current="location"]::after { transform: scaleX(1); }
+    .button, .nav-contact {
+      transition: background .3s ease, color .3s ease, border-color .3s ease, transform .35s var(--motion-ease);
+    }
+    .button .button-arrow, .nav-contact > span {
+      display: inline-block;
+      transition: transform .35s var(--motion-ease);
+    }
+    .button-primary:hover { background: #333; }
+    .button-secondary:hover { background: #111; color: #fff; border-color: #111; }
+    .button:hover .button-arrow, .nav-contact:hover > span { transform: translate(3px, -2px); }
+    .button-primary:hover .button-arrow { transform: translate(3px, 2px); }
+    .number-value { font-variant-numeric: tabular-nums; }
+    .project-card {
+      transition: box-shadow .4s var(--motion-ease), border-color .35s ease !important;
+    }
+    .project-card .program-logo-frame img {
+      transition: transform .8s var(--motion-ease);
+      transform-origin: center;
+    }
+    .project-card .project-content h3 {
+      transition: color .35s ease;
+    }
+    .project-card .program-title-block { position: relative; }
+    .project-card .program-title-block::before {
+      content: "";
+      position: absolute;
+      top: -1px; left: 0;
+      width: 100%; height: 1px;
+      background: #f7f5ef;
+      transform-origin: left;
+      transform: scaleX(.12);
+      transition: transform .75s var(--motion-ease);
+      pointer-events: none;
+    }
+    .stat { transition: background .3s ease; }
+    .skill-tag { transition: background .25s ease, color .25s ease, border-color .25s ease; }
+    .about-portrait img { transition: filter .65s ease; }
+    .approach-item { position: relative; }
+    .approach-item::before {
+      content: "";
+      position: absolute;
+      top: -1px; left: 0;
+      width: 100%; height: 1px;
+      background: #111;
+      transform: scaleX(.13);
+      transform-origin: left;
+      transition: transform .65s var(--motion-ease);
+    }
+    .approach-item.is-in-view::before { transform: scaleX(1); }
+    .about-main { container-type: inline-size; }
+    @supports (font-size: 1cqi) {
+      .about-main h2 { font-size: clamp(22px, 7.8cqi, 64px) !important; }
+    }
+    .about-title-line { white-space: normal; word-break: keep-all; }
+    @media (hover: hover) and (pointer: fine) {
+      .project-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,.075) !important; border-color: #b5b5b5 !important; }
+      .project-card:hover .program-logo-frame img { transform: scale(1.025); }
+      .project-card:hover .program-title-block::before { transform: scaleX(1); }
+      .project-card .stat:hover { background: #f5f5f5; }
+      .skill-tag:hover { background: #111; color: #fff; border-color: #111; }
+      .about-portrait:hover img { filter: grayscale(100%) contrast(1.08); }
+    }
+    @media (max-width: 620px) {
+      .nav-links a::after { bottom: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      .reading-progress { display: none; }
+      .hero-title-line, .hero h1 .highlight, .nav-links a, .nav-links a::after,
+      .button, .nav-contact, .button .button-arrow, .nav-contact > span,
+      .project-card, .project-card .program-logo-frame img, .project-card .project-content h3,
+      .project-card .program-title-block::before, .stat, .skill-tag, .about-portrait img,
+      .approach-item::before { animation: none !important; transition: none !important; }
+      .project-card:hover .program-logo-frame img, .button:hover,
+      .button:hover .button-arrow, .nav-contact:hover > span { transform: none !important; }
+    }
+
   </style>
 </head>
 
@@ -2303,6 +2421,7 @@
        HEADER
   ========================================= -->
   <header class="site-header">
+    <div class="reading-progress" aria-hidden="true"></div>
     <nav class="nav container" aria-label="메인 내비게이션">
       <a class="logo" href="#top" aria-label="이혜인 포트폴리오 첫 화면">
         <span class="logo-mark">H.</span>
@@ -2352,8 +2471,8 @@
         </div>
 
         <h1 id="hero-title">
-          사실의 조각을 모아,<br>
-          <span class="highlight">이야기의 구조</span>를 만듭니다.
+          <span class="hero-title-line">사실의 조각을 모아,</span>
+          <span class="hero-title-line"><span class="highlight">이야기의 구조</span>를 만듭니다.</span>
         </h1>
 
         <div class="hero-bottom">
@@ -2795,6 +2914,107 @@
     // 푸터 연도를 자동으로 갱신
     document.getElementById("current-year").textContent =
       new Date().getFullYear();
+
+    // Progressive enhancement: content remains visible without JavaScript or motion support.
+    (() => {
+      const motionPref = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const reduceMotion = () => motionPref.matches;
+      const progress = document.querySelector(".reading-progress");
+      const links = Array.from(document.querySelectorAll(".nav-links a[href^='#']"));
+      const sections = links.map(link => ({link, section: document.getElementById(link.hash.slice(1))})).filter(item => item.section);
+      let queued = false;
+      function updateScrollUI() {
+        queued = false;
+        const root = document.documentElement;
+        const max = root.scrollHeight - window.innerHeight;
+        if (progress) progress.style.transform = "scaleX(" + (max > 0 ? Math.max(0, Math.min(1, window.scrollY / max)) : 0) + ")";
+        const threshold = Math.min(window.innerHeight * .33, 200);
+        let current = null;
+        for (const item of sections) {
+          if (item.section.getBoundingClientRect().top <= threshold) current = item.link;
+        }
+        if (max > 0 && window.scrollY >= max - 4 && sections.length) current = sections[sections.length - 1].link;
+        for (const item of sections) {
+          if (item.link === current) item.link.setAttribute("aria-current", "location");
+          else item.link.removeAttribute("aria-current");
+        }
+      }
+      function scheduleScrollUI() {
+        if (!queued) { queued = true; window.requestAnimationFrame(updateScrollUI); }
+      }
+      window.addEventListener("scroll", scheduleScrollUI, {passive:true});
+      window.addEventListener("resize", scheduleScrollUI, {passive:true});
+      window.addEventListener("load", scheduleScrollUI, {once:true});
+      updateScrollUI();
+      if (reduceMotion() || !("IntersectionObserver" in window) || !Element.prototype.animate) return;
+      const easing = "cubic-bezier(.22, 1, .36, 1)";
+      function reveal(el, delay = 0, distance = 20, duration = 680) {
+        if (!el || reduceMotion()) return;
+        el.animate([
+          {opacity: .15, transform: "translateY(" + distance + "px)"},
+          {opacity: 1, transform: "translateY(0)"}
+        ], {duration, delay, easing, fill: "backwards"});
+      }
+      const heroEls = document.querySelectorAll(".hero-topline, .hero-title-line, .hero-description, .hero-actions, .hero-index");
+      heroEls.forEach((el, i) => reveal(el, i * 85, i === 1 || i === 2 ? 26 : 15, 850));
+      const observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          observer.unobserve(entry.target);
+          const el = entry.target;
+          el.classList.add("is-in-view");
+          reveal(el, Number(el.dataset.revealDelay || 0), 19, 730);
+        }
+      }, {threshold: 0, rootMargin: "0px 0px -24px 0px"});
+      const groups = [
+        [".section-heading", 0],
+        [".project-card .project-visual", 0],
+        [".project-card .project-meta, .project-card .project-content h3, .project-card .project-description", 70],
+        [".project-stats", 110],
+        [".project-footer", 0],
+        [".about-portrait, .about-main", 0],
+        [".about-side .about-block", 85],
+        [".approach-item", 70],
+        [".contact-panel > .eyebrow, .contact-panel > h2, .contact-panel > p, .contact-note", 65]
+      ];
+      for (const [selector, stagger] of groups) {
+        document.querySelectorAll(selector).forEach((el, i) => {
+          el.dataset.revealDelay = String((i % 3) * stagger);
+          observer.observe(el);
+        });
+      }
+      // Animate only the three summary metrics; preserve exact published values and accessible labels.
+      const metricObserver = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const el = entry.target;
+          metricObserver.unobserve(el);
+          const final = el.textContent.trim();
+          const m = final.match(/^([\d,]+)(\+?)$/);
+          if (!m || reduceMotion()) continue;
+          const target = Number(m[1].replace(/,/g, ""));
+          if (!Number.isFinite(target)) continue;
+          const suffix = m[2];
+          el.setAttribute("aria-label", final);
+          const visible = document.createElement("span");
+          visible.setAttribute("aria-hidden", "true");
+          visible.textContent = final;
+          el.replaceChildren(visible);
+          const started = performance.now();
+          const duration = 1000;
+          function tick(now) {
+            if (reduceMotion()) { visible.textContent = final; return; }
+            const t = Math.min(1, (now - started) / duration);
+            const value = Math.round(target * (1 - Math.pow(1 - t, 3)));
+            visible.textContent = t >= 1 ? final : value.toLocaleString("ko-KR") + suffix;
+            if (t < 1) requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+        }
+      }, {threshold: .4});
+      document.querySelectorAll(".numbers .number-value").forEach(el => metricObserver.observe(el));
+    })();
+
   </script>
 
 </body>
